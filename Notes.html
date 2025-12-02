@@ -1,0 +1,9 @@
+<textarea id="note" style="width: 100%; height: 90vh;"></textarea>
+<script>
+  // Save to session storage on input
+  document.getElementById('note').addEventListener('input', function() {
+    sessionStorage.setItem('tempNote', this.value);
+  });
+  // Load from session storage on page load
+  document.getElementById('note').value = sessionStorage.getItem('tempNote') || '';
+</script>
